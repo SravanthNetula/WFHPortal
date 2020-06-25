@@ -1,0 +1,30 @@
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Employee ID
+      </th>
+      <th class="th-sm">Employee Name
+      </th>
+      <th class="th-sm">Team
+      </th>
+      <th class="th-sm">Employee Email
+      </th>
+      <th class="th-sm">Login
+      </th>
+      <th class="th-sm">Logout
+      </th>
+    </tr>
+  </thead>
+  
+    <tbody>
+      <tr *ngFor="let emp of countries">
+        
+        <td>{{emp.empid}}</td>
+        <td>{{emp.empname}}</td>
+        <td>{{emp.empteam}}</td>
+        <td >{{emp.empemail}}</td>
+        <td ng-if = "emp.empaction == login"  >{{emp.empaction}}</td>
+        <td ng-init="hr = emp.justdate.split('T')[1].substring(0,3)" >{{emp.justdate.split('T')[1].substring(0,5) }} {{hr}}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></td>
+      </tr>
+    </tbody>
+</table>

@@ -1,0 +1,220 @@
+
+    <!-- <div class="fullscreen-bg">
+      <video loop muted autoplay poster="assets/img/bg.jpg" class="fullscreen-bg__video">
+          <source src="assets/img/SaturnFlight.mov" type="video/webm">
+           <source src="video/big_buck_bunny.mp4" type="video/mp4">
+          <source src="video/big_buck_bunny.ogv" type="video/ogg">
+      </video>
+  </div> -->
+    <!--
+      <form #detailsForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+      <table *ngIf="userDetails" class="table-fill">
+      <thead>
+          <tr>
+              <th colspan="4" class="text-center">User Profile</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+              <td>Employee Name</td>
+              <td><input type="text"[ngModelOptions]="{standalone: true}" [(ngModel)]="userService.selectedUserDetails.empname"  name="empname" placeholder="Employee Name" value="{{userDetails.fullName.split(' ')[0]}}">
+              </td>
+          </tr>
+          <tr>
+              <td>Employee email</td>
+              <td><input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="userService.selectedUserDetails.empemail"   name="empname" placeholder="Employee Name" value="{{userDetails.email}}">
+              </td>
+          </tr>
+          <tr>
+            <td>Employee Team</td>
+            <td>    
+                <select [(ngModel)]="userService.selectedUserDetails.empteam" >
+                    <option value="" >--Select Team--</option>
+                    <option value="gis" >NBU- GIS</option>
+                    <option value="crammer" >Crammer</option>
+                </select>
+    
+            </td>
+          </tr>
+          <tr>
+            <td>Employee ID</td>
+            <td><input type="text"[(ngModel)]="userService.selectedUserDetails.empid"   name="empname" placeholder="Employee Id" >
+            </td>
+          </tr>
+          <tr>
+            <td>Action</td>
+            <td>    
+                <select [(ngModel)]="userService.selectedUserDetails.empaction">
+                    <option value="" >--Select Action--</option>
+                    <option value="login" >Login</option>
+                    <option value="logout" >Logout</option>
+                </select>
+    
+            </td>
+          </tr>
+          <tr>
+              <td colspan="2" class="text-center">
+                  <input type="submit" (click)="onLog()" value="Logout" />
+              </td>
+          </tr>
+          
+      </tbody>
+    </table>
+    e92590;
+    </form> -->
+    
+
+    <form [formGroup]="inOutForm">
+        <table  class="table-fill">
+            <thead>
+              
+                <tr>
+                    <th colspan="4" class="text-center"> <i class="fas fa-home" style="color:#1699d2;"></i> Work From Home(Liquid Telecom)</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Employee ID</b></td>
+                <td><input type="text"     formControlName="empid" (blur)="empblur($event)" name="empid" id='empid' >
+                </td>
+              </tr>
+              <tr>
+                    <td><b>Employee Name</b></td>
+                    <td><input type="text" readonly formControlName="empname"  name="empname" value="{{pempnames}}" id='empname' >
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Employee email</b></td>
+                    <td><input type="text" readonly formControlName="empemail"   name="empname" value="{{pempemails}}" id="empemail">
+                    </td>
+                </tr>
+                <tr>
+                  <!-- <td><b>Employee Team</b></td>
+                  <td colspan="2" class="text-center" >    
+                    <div class="form-group" >
+
+                      <select   aria-placeholder="Team" readonly class="select-css" formControlName="empteam" value="{{pempteams}}" >
+                        <option value="" disabled selected>--Select Team--</option>
+                          <option value="gis" >NBU- GIS</option>
+                          <option value="crammer" >Crammer</option>
+                          <option value="nms" >NMS</option>
+                          <option value="sfdc" >SFDC</option>
+                    </select>
+                    </div>
+                  </td> -->
+                  <td><b>Employee Team</b></td>
+                    <td><input type="text" readonly  formControlName="empteam"    name="empteam" value="{{pempteams}}" id="empteam">
+                    </td>
+                </tr>
+                
+                
+                <!-- <tr>
+                  <td>Employee Team</td>
+                  <td colspan="2" class="text-center" >    
+                    <div class="form-group" >
+                      <select id='emptem' class="form-control" formControlName="empteam">
+                          <option value="" >--Select Team--</option>
+                          <option value="gis" >NBU- GIS</option>
+                          <option value="crammer" >Crammer</option>
+                          <option value="nms" >NMS</option>
+                          <option value="sfdc" >SFDC</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr> -->
+               
+                
+                <tr>
+                  <td><b>Action</b></td>
+                  <td colspan="2" class="text-center" >    
+                    <div class="form-group" >
+                      <select   aria-placeholder="Team" class="select-css" (change)="emaction($event)"  id="empaction" >
+                        <option value="" >--Select Action--</option>
+                        <option value="login" id='login'  >Login</option>
+                        <option value="logout" id='logout'>Logout</option>
+                    </select>
+                    </div>
+                  </td>
+                </tr>
+                
+                
+                <!-- <tr>
+                  <td>Action</td>
+                  <td colspan="2" class="text-center" >
+                        
+                      <select formControlName="empaction" class="form-control">
+                          <option value="" >--Select Action--</option>
+                          <option value="login" >Login</option>
+                          <option value="logout" >Logout</option>
+                      </select>
+          
+                  </td>
+                </tr> -->
+                <tr>
+                  
+                    <td colspan="2" class="text-center">
+                        <input type="submit" (click)="onLog()" value="Submit" />
+
+                    </td>
+     
+                </tr>
+                <!-- <tr><td colspan="2" class="text-center"><input type="submit" (click)="onLogout()" value="Logout" />           </td></tr> -->
+                
+                
+            </tbody>
+          </table>
+        </form>    
+        <!-- <br>
+        <div class="form-group" ng-controller="MyCtrl">
+          <label for="employeeid">Employee id</label>
+          <input type="email" ng-blur="onBlur($event)" formControlName="empid" class="form-control" id="employeeid" aria-describedby="emailHelp" placeholder="Employee id">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> 
+        </div>
+        <div class="form-group">
+            <label for="employeename">Employee Name</label>
+            <input type="text" formControlName="empname" class="form-control" id="employeeid" aria-describedby="emailHelp" placeholder="">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="empteam">Employee Team</label>
+             <input type="text" class="form-control" id="employeeid" aria-describedby="emailHelp" placeholder="">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <select formControlName="empteam"  class="form-control" id="exampleInputUserteam" aria-describedby="userHelp" placeholder="Select Team" class="form-control">
+                <option value="">--Select Team--</option>
+                <option value="GIS">NBU - WEB GIS</option>
+                <option value="Crammer">NBU-Crammer</option>
+                <option value="NMS">NBU- NMS</option>
+                <option value="SFDC" >SFDC</option>
+            </select>
+          </div>
+           <div class="form-group">
+            <label for="employeename">Employee Name</label>
+            <input type="text" formControlName="login" class="form-control" id="employeeid" aria-describedby="emailHelp" placeholder="">
+             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div> -->
+          <!-- <div class="form-group form-check">
+            <input type="checkbox"  formControlName="login" class="form-check-input" id="login">
+            <label class="form-check-label"  for="exampleCheck1">Login</label>
+            
+          </div> 
+          
+          <div class="form-group">
+            <label for="empaction">Action</label>
+           
+            <select formControlName="empaction"  class="form-control" id="exampleInputUserteam" aria-describedby="userHelp" placeholder="Select Team" class="form-control">
+                <option value="login">Login</option>
+                <option value="logout">Logout</option>
+            </select>
+          </div>
+           -->
+          
+          <!-- <div class="form-group form-check">
+          <input type="checkbox" formControlName="logout" class="form-check-input" id="logout">
+            <label class="form-check-label" for="exampleCheck1">Logout</label>
+            </div> -->
+            <!-- <div class="col-md-12 text-center"> 
+        <button type="submit" class="btn btn-primary"(click)="onLog()" required>Submit</button>
+        </div> -->  
+        <footer style="float: right;">&copy; Powered by GIS</footer>
+
+      

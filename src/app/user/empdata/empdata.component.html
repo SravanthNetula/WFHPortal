@@ -1,0 +1,60 @@
+
+<div>
+  <img src="assets/img/liquid.png" id="icon" alt="Liquid Icon" />
+</div>
+<form #signUpForm="ngForm" [formGroup]="testForm">
+  <input type="text"  formControlName="empid"  name="empid" placeholder="Employee id"
+  required  >
+ 
+  
+  <input type="text"   name="empname" formControlName="empname" placeholder="Employee Name"
+  required  >
+  
+  <input type="text"   name="empemail" formControlName="empemail" placeholder="Employee Email"
+  required  >
+  
+  <div class="form-group" style="padding-left: 8%;" >
+    <select   aria-placeholder="Team" class="select-css" id="empteam" >
+      <option value="" disabled selected>--Select Team--</option>
+        <option value="gis" >NBU- GIS</option>
+        <option value="crammer" >Crammer</option>
+        <option value="nms" >NMS</option>
+        <option value="sfdc" >SFDC</option>
+  </select>
+  </div>
+  <hr>
+  <!-- <input type="text" #empName="ngModel" [(ngModel)]="userService.selectedEmp.empname" name="empname" placeholder="Employee Name"
+  required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !empname.valid }">
+  <div *ngIf="signUpForm.submitted && !empname.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+  
+
+  <input type="text" #empTeam="ngModel" [(ngModel)]="userService.selectedEmp.empteam" name="empteam" placeholder="Employee Team"
+  required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !empteam.valid }">
+  <div *ngIf="signUpForm.submitted && !empteam.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+  <input type="text" #empemail="ngModel" [(ngModel)]="userService.selectedEmp.empemail" name="empemail" placeholder="Employee Email"
+  required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !empemail.valid }">
+  <div *ngIf="signUpForm.submitted && !empemail.valid">
+    <label class="validation-message">This field is required.</label>
+  </div> -->
+  <!-- <input type="password" #password="ngModel" [(ngModel)]="userService.selectedEmp.password" name="password" placeholder="Password"
+  minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+  <div *ngIf="signUpForm.submitted && password.errors">
+    <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+  </div> -->
+  <input type="submit" value="Submit to Portal" (click)="onReg()">
+</form>
+
+<!-- Success message 
+<div class="success" *ngIf="showSucessMessage">
+  Saved successfully
+</div>
+
+ Error message
+  <div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div> -->

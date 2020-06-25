@@ -1,0 +1,208 @@
+<script src="../../assets/filter.js"></script>
+      <!-- <table  class="table-fill">
+          <thead>
+            
+              <tr>
+                  <th colspan="4" class="text-center"> <i class="fas fa-home" style="color:#1699d2;"></i> Work From Home(Liquid Telecom)</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Employee ID</b></td>
+              <td> {{empid}}</td>
+            </tr>
+            <tr>
+                  <td><b>Employee Name</b></td>
+                  <td>{{empname}}</td>
+              </tr>
+              <tr>
+                  <td><b>Employee email</b></td>
+                  <td>{{empemail}} </td>
+              </tr>
+              <tr>
+                <td><b>Employee Team</b></td>
+                  <td>{{empteam}} </td>
+              </tr>
+              
+              <tr>
+                <td><b>Action</b></td>
+                <td>{{empaction}}</td>
+              </tr>
+             
+          </tbody>
+        </table>
+       -->
+       <!-- <body  class="inventory-body" >
+       <div id="divtb">
+         <table id="" class="table table-dark" style="width:100%">
+          <thead>
+            <tr style="border : 56px solid black; "> 
+                <th>Employee id</th>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Email</th>
+                <th>Action</th>
+                <th>Action At</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of countries">
+            <td>{{emp.empid}}</td>
+            <td>{{emp.empname}}</td>
+            <td>{{emp.empteam}}</td>
+            <td>{{emp.empemail}}</td>
+            <td>{{emp.empaction}}</td>
+            <td ng-init="hr = emp.justdate.split('T')[1].substring(0,3)" >{{emp.justdate.split('T')[1].substring(0,5) }} {{hr}}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></td>
+          </tr>
+        </tbody>
+        </table> 
+      </div> -->
+      <button (click)="exportAsXLSX()"><i class="fa fa-file-excel-o" style="font-size:35px;color:blue"></i></button>
+      <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="1" width="100%">
+        <thead>
+          <tr>
+            <th class="th-sm">Employee ID
+            </th>
+            <th class="th-sm">Employee Name
+            </th>
+            <th class="th-sm">Team
+            </th>
+            <th class="th-sm">Employee Email
+            </th>
+            <th class="th-sm">Action 
+            </th>
+            <th class="th-sm">Action At
+            </th>
+          </tr>
+        </thead>
+        
+          <tbody >
+            <tr  *ngFor="let emp of countries">
+              <td >{{emp.empid}}</td>
+              <td >{{emp.empname}}</td>
+              <td >{{emp.empteam}}</td>
+              <td >{{emp.empemail}}</td>
+              <td >{{emp.empaction}}</td>
+              <td  >{{emp.justdate.split('T')[1].substring(0,5) }}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></td>
+              
+              
+              <!-- <td *ngIf = "emp.empaction == 'login'" >{{emp.empid}}</td>
+              <td *ngIf = "emp.empaction == 'login'">{{emp.empname}}</td>
+              <td *ngIf = "emp.empaction == 'login'">{{emp.empteam}}</td>
+              <td *ngIf = "emp.empaction == 'login'" >{{emp.empemail}}</td>
+              
+              
+              <td  *ngIf = "emp.empaction == 'login'">{{emp.justdate.split('T')[1].substring(0,5) }}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></td>
+              <td  *ngIf = "emp.empaction == 'logout'">{{emp.justdate.split('T')[1].substring(0,5) }}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></td> -->
+              <!-- <td *ngIf = "emp.empaction == 'login'" >{{emp.empid}}</td>
+              <td *ngIf = "emp.empaction == 'login'">{{emp.empname}}</td>
+              <td *ngIf = "emp.empaction == 'login'">{{emp.empteam}}</td>
+              <td *ngIf = "emp.empaction == 'login'" >{{emp.empemail}}</td>
+              <td *ngIf = "emp.empaction == 'login'" >{{emp.empaction}}</td>
+              
+              <td ng-init="hr = emp.justdate.split('T')[1].substring(0,3)" *ngIf = "emp.empaction == 'login'">{{emp.justdate.split('T')[1].substring(0,5) }} {{hr}}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></td>
+              <td *ngIf = "emp.empaction == 'logout'" >{{emp.empid}}</td> -->
+            </tr>
+          </tbody>
+          <!-- <tbody  *ngFor="let emp of countries">
+            <tr  *ngIf = "emp.empaction == 'logout'">
+
+              <td *ngIf = "emp.empaction == 'logout'" >{{emp.empid}}</td>
+              <td *ngIf = "emp.empaction == 'logout'">{{emp.empname}}</td>
+              <td *ngIf = "emp.empaction == 'logout'">{{emp.empteam}}</td>
+              <td *ngIf = "emp.empaction == 'logout'" >{{emp.empemail}}</td>
+              
+              <td ng-init="hr = emp.justdate.split('T')[1].substring(0,3)" *ngIf = "emp.empaction == 'logout'">{{emp.justdate.split('T')[1].substring(0,5) }} {{hr}}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></td>
+            </tr>
+          </tbody> -->
+      </table>
+        <div  *ngFor="let emp of countries" >
+          <h6 *ngIf = "emp.empaction == 'login'">{{emp.empid}}</h6>
+          <h6 *ngIf = "emp.empaction == 'login'">{{emp.empname}}</h6>
+          <h6 *ngIf = "emp.empaction == 'login'">{{emp.empteam}}</h6>
+          <h6 *ngIf = "emp.empaction == 'login'">{{emp.empemail}}</h6>
+          <h6 *ngIf = "emp.empaction == 'login'">{{emp.justdate.split('T')[1].substring(0,5) }}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></h6>
+          <h6 *ngIf = "emp.empaction == 'logout'">{{emp.justdate.split('T')[1].substring(0,5) }}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></h6>
+          
+        </div>
+
+
+        <table>
+            <thead>
+              <th>Employee Id</th>
+              <th>Employee Name</th>
+              <th>Employee Email</th>
+              <th>Employee Team</th>
+              <th>Login Time</th>
+              <th>Logout Time</th>
+            </thead>
+            <tr *ngFor="let emp of countries" >
+              <td><h6 *ngIf = "emp.empaction == 'login' || emp.empaction == 'logout'" >{{emp.empid}}</h6></td>
+              <td><h6 *ngIf = "emp.empaction == 'login' || emp.empaction == 'logout'" >{{emp.empname}}</h6></td>
+              <td><h6 *ngIf = "emp.empaction == 'login' || emp.empaction == 'logout'">{{emp.empteam}}</h6></td>
+              <td><h6 *ngIf = "emp.empaction == 'login' || emp.empaction == 'logout'">{{emp.empemail}}</h6></td>
+              <td ><h6 *ngIf = "emp.empaction == 'login' ">{{emp.justdate.split('T')[1].substring(0,5) }}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></h6></td>
+              <td ><h6 *ngIf = "emp.empaction == 'logout'">{{emp.justdate.split('T')[1].substring(0,5) }}<i *ngIf = "emp.justdate.split('T')[1].substring(0,2) >= 12"> PM</i><i *ngIf = "emp.justdate.split('T')[1].substring(0,2) < 12"> AM </i></h6></td>
+
+            </tr>
+
+        </table>
+<!--
+Testing Div in Table
+-->
+<!--<hr>
+<div class="right">
+<table>
+  <thead>
+    <th>Employee Id</th>
+    <th>Employee Name</th>
+    <th>Login Time</th>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let emp of countries">
+<td></td>
+<td></td>
+<td></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+<div class="left">Another Div</div>
+
+
+
+<table>
+  <thead>
+    <th>empid</th>
+  <th>empname</th>
+  <th>empemail</th>
+  <th>empTeam</th>
+  <th>Is Done</th>
+  <th>login time</th>
+  <th>logout time</th>
+</thead>
+<tbody>-->
+
+
+
+
+
+  <!-- <tr *ngFor="let all of all"  > 
+<td>{{all.empid}}</td>
+<td>{{all.empaction}}</td>
+<td>{{all.justdate}}</td>
+<td>{{all.justdate}}</td>
+  </tr>
+  <tr *ngFor="let all of all">
+     <td>{{console.log(all)}}</td> 
+    <td>{{all}}</td>
+    
+
+  </tr>
+</tbody>
+</table>-->
+      <footer style="float: right;">&copy; Powered by GIS</footer>
+      <!-- </body> -->
+
+    

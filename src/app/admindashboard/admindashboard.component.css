@@ -1,0 +1,48 @@
+@import './bootstrap.css';
+
+.left {
+    overflow: hidden;
+    min-height: 50px;
+    border: 2px dashed #f0f;
+}
+
+.right {
+    float: right;
+    width: 250px;
+    min-height: 50px;
+    margin-left: 10px;
+    border: 2px dashed #00f;
+}
+
+
+
+th{
+    background-color:#149bd3;
+}
+table,tr,td{
+    border-spacing: 0;
+    border:  1px solid black;;
+}
+divtb{
+    width: 50%;
+    
+}
+.inventory-body{
+    background-color: skyblue;
+}
+
+
+
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}
