@@ -93,11 +93,10 @@ export class AdmindashboardComponent implements OnInit {
       // console.log('dashboard team from service'+this.selectTest.empteam);
       // console.log('dashboard email from service'+this.selectTest.empemail);
       console.log(JSON, null, 2);
-      console.log(JSON, null, 2);
       // console.log('inside service pempid'+this.pempid);
   });
 
-  } 
+  }
   exportAsXLSX():void {
     this.userService.exportAsExcelFile(this.countries, 'sample');
   }
