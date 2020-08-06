@@ -168,9 +168,8 @@ size;
 isDisabled:boolean = false;
 getEmpActions(id: string)  {
   
-  
-  
-  return this.http.get(environment.apiBaseUrl+ `/getallactions/${id}`)
+  // return this.http.get(environment.apiBaseUrl+ `/getallactions/${id}`)
+  return this.http.get(`http://localhost:3000/api/getallactions/${id}`)
 
   .subscribe(data => {
       //console.log('subscribes'+data[0]._id);  
@@ -254,9 +253,9 @@ let x = 0;
   getTestData(id: string)  {
   console.log('inside getTestData in TS pempids'+this.pempids);
   
+  // return this.http.get(environment.apiBaseUrl+ `/some/${id}`)
+  return this.http.get(`http://localhost:3000/api//some/${id}`)
   
-  return this.http.get(environment.apiBaseUrl+ `/some/${id}`)
-
   .subscribe(data => {
       console.log('subscribes'+data[0]._id);  
       this.pempids = data[0].empid;

@@ -61,11 +61,13 @@ export class UserService {
   //HttpMethods
 
   postEmp(emp: Emp){
-    return this.http.post(environment.apiBaseUrl+'/intodb',emp,this.noAuthHeader);
+    // return this.http.post(environment.apiBaseUrl+'/intodb',emp,this.noAuthHeader);
+    return this.http.post('http://localhost:3000/api/intodb',emp,this.noAuthHeader);
     // return this.http.post('/intodb',emp,this.noAuthHeader);
   }
   postUser(user: User){
-    return this.http.post(environment.apiBaseUrl+'/register',user,this.noAuthHeader);
+    // return this.http.post(environment.apiBaseUrl+'/register',user,this.noAuthHeader);
+    return this.http.post('http://localhost:3000/api/register',user,this.noAuthHeader);
   }
   // postUser(admin: Admin){
   //   return this.http.post(environment.apiBaseUrl+'/registeradmin',admin,this.noAuthHeader);
@@ -73,21 +75,25 @@ export class UserService {
   
   postDetails(user: User){
     
-    return this.http.post(environment.apiBaseUrl+'/foremp',user,this.noAuthHeader);
+    // return this.http.post(environment.apiBaseUrl+'/foremp',user,this.noAuthHeader);
+    return this.http.post('http://localhost:3000/api/foremp',user,this.noAuthHeader);
   }
 
   login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
+    // return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
+    return this.http.post('http://localhost:3000/api/authenticate', authCredentials,this.noAuthHeader);
   } 
 
   getUserProfile() {
-    return this.http.get(environment.apiBaseUrl + `/userProfile`);
+    // return this.http.get(environment.apiBaseUrl + `/userProfile`);
+    return this.http.get(`http://localhost:3000/api/userProfile`);
   }
 
   
   getEmpData() {
     
-    return this.http.get(environment.apiBaseUrl + '/getempdata');
+    // return this.http.get(environment.apiBaseUrl + '/getempdata');
+    return this.http.get('http://localhost:3000/api/getempdata');
   }
 
   ///test
@@ -96,7 +102,9 @@ export class UserService {
   pempteam='';
   getTest(id: string)  {
   console.log('inside service pempid'+this.pempid);
-  return this.http.get(environment.apiBaseUrl+ `/test/${id}`)
+  // return this.http.get(environment.apiBaseUrl+ `/test/${id}`)
+  return this.http.get(`http://localhost:3000/api/test/${id}`)
+  
 
   .subscribe(data => {
       console.log('subscribes');  
@@ -121,11 +129,13 @@ export class UserService {
 }
   getTestbk() {
     console.log(res=>res.JSON());
-    return this.http.get(environment.apiBaseUrl + '/test').pipe(map(res => res.toString()))
+    // return this.http.get(environment.apiBaseUrl + '/test').pipe(map(res => res.toString()))
+    return this.http.get('http://localhost:3000/api/test').pipe(map(res => res.toString()))
     
   }
   postTest(test: Test){
-    return this.http.post(environment.apiBaseUrl+'/testp',test,this.noAuthHeader);
+    // return this.http.post(environment.apiBaseUrl+'/testp',test,this.noAuthHeader);
+    return this.http.post('http://localhost:3000/api/testp',test,this.noAuthHeader);
   }
 ///
 
@@ -162,13 +172,15 @@ export class UserService {
   }
 
   auth(phn: string){
-    this.http.get(environment.apiBaseUrl +'/getin/${id}')
+    // this.http.get(environment.apiBaseUrl +'/getin/${id}')
+    this.http.get('http://localhost:3000/api/getin/${id}')
   }
 
 
 
   getin(id: string){
-    this.http.get(environment.apiBaseUrl +'/getin/${id}')
+    // this.http.get(environment.apiBaseUrl +'/getin/${id}')
+    this.http.get('http://localhost:3000/api/getin/${id}')
   }
 
 

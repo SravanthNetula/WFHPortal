@@ -6,9 +6,9 @@ import { environment } from 'src/environments/environment';
 import { ExcelService } from '../shared/excel.service';
 
 @Component({
-  template: `
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    `,
+  // template: `
+  // <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  //   `,
   selector: 'app-admindashboard',
   templateUrl: './admindashboard.component.html',
   styleUrls: ['./admindashboard.component.css',]
@@ -36,7 +36,8 @@ export class AdmindashboardComponent implements OnInit {
   all:any=[5];
   getDashboardData()
   {
-    return this.http.get(environment.apiBaseUrl + '/getsingle')
+    // return this.http.get(environment.apiBaseUrl + '/getsingle')
+    return this.http.get('http://localhost:3000/api/getsingle')
     .subscribe(data => {
       this.countries = data;
       console.log('subscribes'+data['length']);  
